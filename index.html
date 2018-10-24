@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slideshow</title>
+	<style>
+	body{
+		background: black;
+	}
+		.slideshow{
+			position: relative;
+			width: 800px;
+			height: 300px;
+			overflow: hidden;
+			background: #fff;
+			margin:10px auto;
+		}
+		.slideshow img{
+			display: block;
+			margin:0;
+		}
+		.slider-reel{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 800px;
+			height: 1200px;
+			overflow: hidden;
+		}
+
+
+
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		
+		<div class="slideshow">
+
+		<div class="slider-reel">
+			<img src="images/1.jpg" alt="">
+			<img src="images/2.jpg" alt="">
+			<img src="images/3.jpg" alt="">
+			<img src="images/4.jpg" alt="">
+		</div>
+			
+		</div>
+
+
+	</div>
+	<script type="text/javascript">
+		const slider = document.querySelector('.slider-reel');
+		const height = 300;
+			let htop = 0;
+
+
+		slider.onclick = function() {
+			htop = htop + height;
+			
+			if(htop > 900) {
+				htop = 0;
+			}
+
+			slider.style.top = `-${htop}px`;
+		}
+	</script>
+</body>
+</html>
